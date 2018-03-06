@@ -65,7 +65,7 @@ Create a new article by posting to http://localhost:8080/articles end point usin
  
  Retireve article between specific time period
  
- curl -X GET --header 'Accept: application/json' [http://localhost:8080/articles?from=2018-02-05 20:26:20.0&to=2018-04-05 20:26:20.0]
+ curl -X GET --header 'Accept: application/json' http://localhost:8080/articles?from=2018-02-05 20:26:20.0&to=2018-04-05 20:26:20.0
 
 
 ## Tests
