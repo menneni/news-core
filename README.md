@@ -1,13 +1,16 @@
 # News core
-Backend service for news articles using Spring boot
+<table>
+<tr>
+<td>
+  Simple backend service to serve news articles using spring boot
+</td>
+</tr>
+</table>
 
-# Motivation
-Simple backend service to serve news articles
+## Installation
 
-# Installation
+## API Reference
 
-# API Reference
+## Tests
 
-# Tests
-
-# To do
+## To do
