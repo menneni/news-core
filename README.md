@@ -49,7 +49,7 @@ By default application runs on 8080 port but can be customizable by editing `src
 
 #### Sample usage
 
-Create a new articl by posting to http://localhost:8080/articles end point using CURL
+Create a new article by posting to http://localhost:8080/articles end point using CURL
 
 `curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/hal+json' -d '{ \ 
  	"header": "Walmart launches a new home shopping site for furniture and home décor 2", \ 
@@ -59,13 +59,13 @@ Create a new articl by posting to http://localhost:8080/articles end point using
  	"authors": [{"name":"author1"}, {"name":"author2"}] \ 
  }' 'http://localhost:8082/articles'`
  
- Retrieve above artciel using following end point
+ Retrieve above artcile using following end point
  
  curl -X GET --header 'Accept: application/json' 'http://localhost:8080/articles/1'
  
  Retireve article between specific time period
  
- curl -X GET --header 'Accept: application/json' [localhost:8080/articles?from=2018-02-05 20:26:20.0&to=2018-04-05 20:26:20.0]
+ curl -X GET --header 'Accept: application/json' [http://localhost:8080/articles?from=2018-02-05 20:26:20.0&to=2018-04-05 20:26:20.0]
 
 
 ## Tests
