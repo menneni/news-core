@@ -1,0 +1,32 @@
+version: '2.1'
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - "13306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysql123
+      - MYSQL_DATABASE=news
+      - MYSQL_USER=news_api_user
+      - MYSQL_PASSWORD=mysql234
+    healthcheck:
+      test: "/etc/init.d/mysql status"
+      interval: 1s
+      retries: 120
+    
+  news:
+    image: menneni/news-core
+    restart: always
+    depends_on:
+      db:
+          condition: service_healthy
+    ports:
+     - "9500:8080"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_NAME=news
+      - MYSQL_USERNAME=news_api_user
+      - MYSQL_PASSWORD=mysql234
+      - SPRING_DATASOURCE_URL='jdbc:mysql://db:3306/news?createDatabaseIfNotExist=true&useSSL=false'
